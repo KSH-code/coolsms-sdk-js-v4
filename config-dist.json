@@ -1,6 +1,5 @@
 {
-  "credentials": {
-    "apiKey": "",
-    "apiSecret": ""
-  }
+  "apiKey": "",
+  "apiSecret": "",
+  "accessToken": ""
 }

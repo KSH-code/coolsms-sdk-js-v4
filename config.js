@@ -7,8 +7,10 @@
 const moment = require('moment')
 const uniqid = require('uniqid')
 const HmacSHA256 = require('crypto-js/hmac-sha256')
-const config = require('./config.json')
-const { apiKey = process.env.apiKey || '', apiSecret = process.env.apiSecret || '', accessToken = process.env.accessToken || '', phoneNumber = '01000000000' } = config
+const fs = require('fs')
+const path = require('path')
+const config = fs.existsSync(path.join(__dirname, '/config.json')) ? require('./config.json') : {}
+let { apiKey, apiSecret, accessToken, phoneNumber } = config
 
 module.exports = {
   getAuth (headerType = getHeaderType()) {
@@ -27,6 +29,12 @@ module.exports = {
   },
   getPhoneNumber () {
     return phoneNumber
+  },
+  init (config) {
+    apiKey = config.apiKey
+    apiSecret = config.apiSecret
+    accessToken = config.accessToken
+    phoneNumber = config.accessToken
   }
 }
 

@@ -4,10 +4,6 @@ node_js:
 install:
 - npm install
 script:
-- export API_KEY=${API_KEY}
-- export API_SECRET=${API_SECRET}
-- export PHONE_NUMBER=${PHONE_NUMBER}
-- export ab=${a}
 - npm test
 env:
   global:

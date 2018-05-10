@@ -4,8 +4,8 @@ node_js:
 install:
 - npm install
 script:
-- export ${API_KEY}
-- export ${API_SECRET}
+- export $API_KEY
+- export $API_SECRET
 - npm test
 env:
   global:

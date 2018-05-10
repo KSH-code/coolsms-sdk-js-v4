@@ -4,8 +4,9 @@ node_js:
 install:
 - npm install
 script:
-  - echo ${API_KEY}
-  - printenv
+  - 'echo "${API_KEY}"'
+  - 'echo "$API_KEY"'
+  - 'echo "$API_KEY"'
   - npm test
 env:
   global:

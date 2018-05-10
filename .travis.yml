@@ -1,11 +1,15 @@
 language: node_js
 node_js:
-  - "node"
+- node
 install:
-  - "npm install"
+- npm install
 script:
-  - "export API_KEY=${API_KEY}"
-  - "export API_SECRET=${API_SECRET}"
-  - "export PHONE_NUMBER=${PHONE_NUMBER}"
-  - "export ab=${a}"
-  - "npm test"
+- export API_KEY=${API_KEY}
+- export API_SECRET=${API_SECRET}
+- export PHONE_NUMBER=${PHONE_NUMBER}
+- export ab=${a}
+- npm test
+env:
+  global:
+  - secure: tp/NChpLqCl77k21TQh08wTDnGEi8MSBW628urjcB+ai6I8wTnN7V4Ti7XxJAsW9Pu2i9QGraDVR0lmf29ibBGBcKocVk95oG//OyoMkHHLJNaEq7bqc5cxk+8ERpw39G8odA9fZ9OLDfSIwlIwrcXFuwRhvYw8k1RArAgosyrolWINCz9Bbs2OSHAkAbNeV4tjOJj6Hy0AZ2AjlUUnNi2xyIa+sLU1yBoyA6+iq0ew0xvcgwDtVPSoCgDqW51966Tx19kuytFykfcq++cQeD/0NWJTVITZ8e0jF21xAWWEJB9tbSFQ14njFQFOqNzr/+3677UdnnOIO+9Bmouxm6QL4zZLgC9sPI7RTwkd/SZzX9BdFeci5ALRw+TM+1SViBkLhw+p9SkNsV4Ju3qo0UnKr2mDHOE1znr1tyxUOFrwiyPDCIBRgy+KUWeRS99+d0i+0XNIH990cByv7Yf3zx7XIIPwUUNc/AThw/9ZTl+a9ffaAn+9kPWv6CvHAlcDVTmT8NpU7aFMmdPhj4Q/RntoAbVLghAkiw49kV/w0IVs/W/902fsNA+O2Shc5zdIkpxuuP2YqLn+YlQ2e212LaqfyxNzBL2lieNYEcGpoJZr3N1DXWoqtxnUAvlnMTmPSbKrfH+k/Wk5lAM+6XYXNbTThDnZe2/nR81uI/HZbbP8=
+  - secure: fmqqFWMtN0sZ8hEAjkL71Rhe/MVcFRNP+pxKWgK316akXBS7sU5nDHb3j5cjyiO3ILL6lJPX+AiEkaVCpsJQAp9/51oxuXtKUAPw+K5jZk3d2feC69lc/vSxpd6eA0xID6sucyn2+jBBdbgXlPazi9aNjEaNUYJa03VB5STWp7Ra3rdtVaqz9tdAGn+/TFUEGDvyHPSdmBE8jkBpl0YWmNbAlenm5iD/x84rW1Ei0DA8tLhNSDT9wGabIkOfI6WUfI/AJ8hLYYZvEwSbMOByI/+1rg8SVkS617FTiwygJzR8vhGNp/95ozysnjpqKMXtujjIjEj7yVD0BZSgxtqMMLP6oKD7Gy0S6prEslSsjGL6pxzE3E4HZzYg26hA6qZFaSBEaQmIK7Zc0ywlvuA6laPkLen00dM3hQ09sFDhMJY380aRUmvR6mbQ6akKuhTOHNJEME0+MbQWZ2qn0jSytPXoT3fM4OBSv0ZJTHQJ0nIqdAGC1qTFbH9Jmnqz8Ijly9VrmMGbsyVEGubiaNiTmt37LmZvO5Ta+va22I5M2YLGIa5rOT0fpXFlEff0txjOUvTataXedH56asqB4hb2jMjJQi6o3nAd2nC1inK2P6uJmv6lNvFLkpn9B8E+B9VhEUm8B9laYjqLH64gqZuEcnn/4Ypznh7iar+gv0CvooA=

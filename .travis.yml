@@ -3,9 +3,10 @@ node_js:
 - node
 install:
 - npm install
-script:
+before_script:
   - export ${API_KEY}
   - export ${API_SECRET}
+script:
   - npm test
 env:
   global:

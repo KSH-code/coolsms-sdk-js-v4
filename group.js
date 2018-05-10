@@ -21,13 +21,17 @@ module.exports = class Group {
     this.groupId = this.groupData.groupId
   }
   async addGroupMessage (messages) {
-    if (!this.getGroupId()) throw new Error('그룹을 생성하고 사용해주세요.')
     if (!Array.isArray(messages)) messages = [messages]
     messages = JSON.stringify(messages)
-    const data = await asyncRequest('put', `https://rest.coolsms.co.kr/messages/v4/groups/${this.groupId}/messages`, { headers: { Authorization: getAuth() }, form: { messages } })
+    const data = await asyncRequest('put', `https://rest.coolsms.co.kr/messages/v4/groups/${this.getGroupId()}/messages`, { headers: { Authorization: getAuth() }, form: { messages } })
+    return data
+  }
+  async sendMessages () {
+    const data = await asyncRequest('post', `https://rest.coolsms.co.kr/messages/v4/groups/${this.getGroupId()}/send`, { headers: { Authorization: getAuth() } })
     return data
   }
   getGroupId () {
+    if (!this.groupId) throw new Error('그룹을 생성하고 사용해주세요.')
     return this.groupId
   }
 }

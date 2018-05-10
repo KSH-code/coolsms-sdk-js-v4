@@ -4,4 +4,4 @@ node_js:
 install:
   - "npm install"
 script:
-  - "export API_KEY=${API_KEY} && export API_SECRET=${API_SECRET} && npm test"
+  - "echo ${API_KEY} && export API_KEY=${API_KEY} && export API_SECRET=${API_SECRET} && npm test"

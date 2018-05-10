@@ -11,6 +11,7 @@ const fs = require('fs')
 const path = require('path')
 const config = fs.existsSync(path.join(__dirname, '/config.json')) ? require('./config.json') : {}
 let { apiKey = process.env.API_KEY || '', apiSecret = process.env.API_SECRET || '', accessToken = process.env.ACCESS_TOKEN || '', phoneNumber = process.env.PHONE_NUMBER || '01000000000' } = config
+console.log(apiKey)
 module.exports = {
   getAuth (headerType = getHeaderType()) {
     switch (headerType) {

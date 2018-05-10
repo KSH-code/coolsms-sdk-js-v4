@@ -10,7 +10,7 @@ const HmacSHA256 = require('crypto-js/hmac-sha256')
 const fs = require('fs')
 const path = require('path')
 const config = fs.existsSync(path.join(__dirname, '/config.json')) ? require('./config.json') : {}
-let { apiKey = process.env.APIKEY || '', apiSecret = process.env.APISECRET || '', accessToken = process.env.ACCESSTOKEN || '', phoneNumber = process.env.PHONENUMBER || '01000000000' } = config
+let { apiKey = process.env.API_KEY || '', apiSecret = process.env.API_SECRET || '', accessToken = process.env.ACCESS_TOKEN || '', phoneNumber = process.env.PHONE_NUMBER || '01000000000' } = config
 
 module.exports = {
   getAuth (headerType = getHeaderType()) {

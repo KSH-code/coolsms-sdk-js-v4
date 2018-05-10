@@ -5,3 +5,9 @@ install:
   - "npm install"
 script:
   - "npm test"
+env:
+  global:
+    - API_KEY=$API_KEY
+    - API_SECRET=$API_SECRET
+    - ACCESS_TOKEN=$ACCESS_TOKEN
+    - PHONE_NUMBER=$PHONE_NUMBER 

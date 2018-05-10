@@ -3,8 +3,8 @@ node_js:
   - "node"
 install:
   - "npm install"
-before_install:
-  - "export API_KEY=$(echo $API_KEY)"
-  - "export API_SECRET=$(echo $API_SECRET)"
 script:
+  - "export API_KEY=${API_KEY}"
+  - "export API_SECRET=${API_SECRET}"
+  - "export PHONE_NUMBER=${PHONE_NUMBER}"
   - "npm test"

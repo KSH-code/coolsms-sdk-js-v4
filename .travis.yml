@@ -3,7 +3,7 @@ node_js:
 - node
 install:
 - npm install
-- export "$API_KEY"
+- export API_KEY="$API_KEY"
 env:
   global:
   - a=b

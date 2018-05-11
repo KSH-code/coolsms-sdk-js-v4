@@ -101,5 +101,31 @@ describe('test', () => {
       expect(data.errorCode).to.equal('ResourceNotFound')
       expect(data.errorMessage).to.equal('해당 그룹에 메시지가 존재하지 않습니다.')
     })
+    it('메시지 리스트 조회 (그룹 생성 전)', async () => {
+      const group = new Group()
+      let data = {}
+      try {
+        await group.getMessageList()
+      } catch (err) {
+        data = err
+      }
+      expect(data.message).to.equal('그룹을 생성하고 사용해주세요.')
+    })
+    it('메시지 리스트 조회 (정상)', async () => {
+      const group = new Group()
+      await group.createGroup()
+      await group.addGroupMessage({
+        to: getPhoneNumber(),
+        from: getPhoneNumber(),
+        text: 'TEST'
+      })
+      await group.addGroupMessage({
+        to: getPhoneNumber(),
+        from: getPhoneNumber(),
+        text: 'TEST'
+      })
+      const data = await group.getMessageList()
+      expect(data).to.have.lengthOf(2)
+    })
   })
 })

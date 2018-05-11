@@ -5,6 +5,7 @@
  */
 
 const os = require('os')
+const qs = require('qs')
 const { asyncRequest } = require('./utils')
 const { getAuth } = require('./config')
 
@@ -28,6 +29,11 @@ module.exports = class Group {
   }
   async sendMessages () {
     const data = await asyncRequest('post', `https://rest.coolsms.co.kr/messages/v4/groups/${this.getGroupId()}/send`, { headers: { Authorization: getAuth() } })
+    return data
+  }
+  async getMessageList (queryObject = { groupId: this.getGroupId() }) {
+    const query = `?${qs.stringify(queryObject)}`
+    const data = await asyncRequest('get', `https://rest.coolsms.co.kr/messages/v4/list${query}`, { headers: { Authorization: getAuth() } })
     return data
   }
   getGroupId () {

@@ -6,7 +6,7 @@
  */
 
 const { expect } = require('chai')
-const { group: Group } = require('../')
+const { Group } = require('../')
 const { getAuth, getPhoneNumber } = require('../config')
 
 describe('test', () => {

@@ -1,13 +1,13 @@
 'use strict'
 
-const group = require('./group')
-const simple = require('./simple')
-const image = require('./image')
-const list = require('./list')
+const Group = require('./group')
+const Simple = require('./simple')
+const Image = require('./image')
+const List = require('./list')
 
 module.exports = {
-  group,
-  simple,
-  image,
-  list
+  Group,
+  Simple,
+  Image,
+  List
 }

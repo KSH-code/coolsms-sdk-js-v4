@@ -5,8 +5,10 @@
  */
 
 const request = require('request')
+const { getAuth } = require('../config')
 
-function asyncRequest (method, uri, data) {
+function asyncRequest (method, uri, data = {}) {
+  data.headers = { Authorization: getAuth() }
   return new Promise((resolve, reject) => {
     request[method](uri, data, (err, res) => {
       res.body = JSON.parse(res.body || '{}')
